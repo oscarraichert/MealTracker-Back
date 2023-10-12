@@ -8,13 +8,6 @@ namespace MealTracker.API.WebAppExtensions
     {
         public static void MapEndpoints(this WebApplication app)
         {
-            app.MapGet("/index", (HttpContext ctx) =>
-            {
-                ctx.Response.ContentType = "text/html";
-
-                return File.ReadAllText("index.html");
-            });
-
             app.MapGet("/test", (HttpContext ctx) =>
             {
                 return "funfando";
