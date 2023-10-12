@@ -1,4 +1,6 @@
-﻿using MealTracker.API.Dtos;
+﻿using MealTracker.API.Requests;
+using MediatR;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace MealTracker.API.WebAppExtensions
 {
@@ -18,10 +20,10 @@ namespace MealTracker.API.WebAppExtensions
                 return "funfando";
             });
 
-            app.MapPost("/insert", (InsertMealDto newMeal) =>
+            app.MapPost("/insert", async (IMediator mediatr, InsertMealRequest req) =>
             {
-                Console.WriteLine($"New meal is : {newMeal.Name}." +
-                    $"\nIt has {newMeal.Calories} Kcal, {newMeal.Proteins} Proteins and {newMeal.Fats} Fats.");
+                var response = await mediatr.Send(req);
+                return response;
             });
         }
     }
