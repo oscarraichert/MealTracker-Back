@@ -2,12 +2,13 @@
 using Commands.Infra.Models;
 using MediatR;
 using MongoDB.Bson.Serialization.Attributes;
+using System.Reflection.Metadata.Ecma335;
 
 namespace MealTracker.API.Requests
 {
     public class InsertMealRequest: IRequest<string>
     {
-        private DateTime CreationDate { get; set; }
+        public DateTime CreationDate { get; set; }
 
         public string Name { get; set; }
 
@@ -22,6 +23,11 @@ namespace MealTracker.API.Requests
         public double Fats { get; set; }
 
         public string Notes { get; set; }
+
+        public InsertMealRequest()
+        {
+            CreationDate = DateTime.Now;
+        }
 
         public Meal ToEntity()
         {

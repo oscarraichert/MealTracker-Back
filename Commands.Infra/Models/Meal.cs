@@ -5,7 +5,7 @@ namespace Commands.Infra.Models
     [BsonIgnoreExtraElements]
     public class Meal
     {
-        private DateTime CreationDate { get; set; }
+        public DateTime CreationDate { get; set; }
 
         public string Name { get; set; }
 
@@ -23,7 +23,7 @@ namespace Commands.Infra.Models
 
         public Meal()
         {
-            CreationDate = DateTime.Now;
+            
         }
     }
 }
