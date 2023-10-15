@@ -15,4 +15,9 @@
     <Folder Include="Endpoints\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Commands.Infra\Commands.Infra.csproj" />
+    <ProjectReference Include="..\Commands.Services\Commands.Services.csproj" />
+  </ItemGroup>
+
 </Project>

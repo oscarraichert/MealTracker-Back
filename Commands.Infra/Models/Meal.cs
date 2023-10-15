@@ -1,7 +1,12 @@
-﻿namespace MealTracker.API.Dtos
+﻿using MongoDB.Bson.Serialization.Attributes;
+
+namespace Commands.Infra.Models
 {
-    public abstract class InsertMealDto
+    [BsonIgnoreExtraElements]
+    public class Meal
     {
+        private DateTime CreationDate { get; set; }
+
         public string Name { get; set; }
 
         public double Quantity { get; set; }
@@ -15,5 +20,10 @@
         public double Fats { get; set; }
 
         public string Notes { get; set; }
+
+        public Meal()
+        {
+            CreationDate = DateTime.Now;
+        }
     }
 }
