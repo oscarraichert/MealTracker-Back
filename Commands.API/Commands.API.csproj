@@ -17,7 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Commands.Infra\Commands.Infra.csproj" />
-    <ProjectReference Include="..\Commands.Services\Commands.Services.csproj" />
+    <ProjectReference Include="..\Commands.Services\Commands.Application.csproj" />
   </ItemGroup>
 
 </Project>

@@ -5,9 +5,9 @@ VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Commands.API", "Commands.API\Commands.API.csproj", "{17CBBFA9-989F-46C9-9FFB-941C6DEAEAA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commands.Services", "Commands.Services\Commands.Services.csproj", "{D1BA44E0-4695-48C3-B4BB-2FF0367B0388}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Commands.Application", "Commands.Services\Commands.Application.csproj", "{D1BA44E0-4695-48C3-B4BB-2FF0367B0388}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commands.Infra", "Commands.Infra\Commands.Infra.csproj", "{08FC4636-C413-424F-AC2E-3A357DDBE86F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Commands.Infra", "Commands.Infra\Commands.Infra.csproj", "{08FC4636-C413-424F-AC2E-3A357DDBE86F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

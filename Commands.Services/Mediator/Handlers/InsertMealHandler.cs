@@ -1,4 +1,5 @@
-﻿using Commands.Services;
+﻿using Commands.API.Model;
+using Commands.Infra;
 using MealTracker.API.Requests;
 using MediatR;
 using MongoDB.Bson;
@@ -7,18 +8,18 @@ namespace MealTracker.API.Handlers
 {
     public class InsertMealHandler : IRequestHandler<InsertMealRequest, string>
     {
-        private readonly Services Services;
+        private DatabaseCommands databaseCommands;
 
-        public InsertMealHandler(Services services)
+        public InsertMealHandler(DatabaseCommands dbCommands)
         {
-            Services = services;
+            databaseCommands = dbCommands;
         }
 
         public async Task<string> Handle(InsertMealRequest request, CancellationToken cancellationToken)
         {
-            await Services.InsertAsync(request);
+            await databaseCommands.InsertAsync(request.Meal.ToEntity());
 
-            return await Task.FromResult("Success");
+            return "Success";
         }
     }
 }

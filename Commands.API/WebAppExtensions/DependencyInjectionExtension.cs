@@ -1,5 +1,4 @@
 ﻿using Commands.Infra;
-using Commands.Services;
 using System.Runtime.CompilerServices;
 
 namespace MealTracker.API.WebAppExtensions
@@ -10,7 +9,6 @@ namespace MealTracker.API.WebAppExtensions
         {
             services.AddSingleton<DatabaseSettings>();
             services.AddTransient<DatabaseCommands>();
-            services.AddTransient<Services>();
         }
     }
 }

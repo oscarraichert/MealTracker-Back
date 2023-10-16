@@ -1,3 +1,4 @@
+using Commands.Application;
 using Commands.Infra;
 using MealTracker.API.Handlers;
 using MealTracker.API.WebAppExtensions;
@@ -14,7 +15,7 @@ namespace MealTracker.API
 
             builder.Services.AddAuthorization();
             builder.Services.ConfigureDependencyInjection();
-            builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(InsertMealHandler).Assembly));
+            builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(ApplicationAssembly).Assembly));
 
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
