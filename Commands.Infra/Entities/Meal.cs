@@ -1,4 +1,6 @@
-﻿namespace Commands.Infra.Models
+﻿using Commands.Infra.Entities.Result;
+
+namespace Commands.Infra.Models
 {
     public class Meal
     {
@@ -17,5 +19,17 @@
         public required double Fats { get; set; }
 
         public string? Notes { get; set; }
+
+        public bool CorrectMacros()
+        {
+            var macrosCal = Proteins * 4 + Carbohydrates * 4 + Fats * 9;
+
+            if (macrosCal > Calories)
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
 }

@@ -1,44 +1,37 @@
-﻿using System.Runtime.InteropServices;
+﻿using Result.Entities;
+using System.Runtime.InteropServices;
 
 namespace Commands.Infra.Entities.Result
 {
-    public class Result
+    public class Result<T>
     {
         internal bool Failed { get; set; }
 
-        public object? Data { get; private set; }
+        public T? Data { get; private set; }
 
-        public string? ErrorMessage { get; private set; }
+        public Error? ErrorData { get; private set; }
 
         public bool HasFailed() => Failed;
 
         private Result() { }
 
-        private Result(object? data)
+        private Result(T data)
         {
             Data = data;
         }
 
-        public static Result Success<T>(T obj)
+        public static Result<T> Success(T obj)
         {
-            var result = new Result(obj);
+            var result = new Result<T>(obj);
             result.Failed = false;
 
             return result;
         }
 
-        public static Result Success()
+        public static Result<T> Error(Error error)
         {
-            var result = new Result();
-            result.Failed = false;
-
-            return result;
-        }
-
-        public static Result Error(string errorMessage)
-        {
-            var result = new Result();
-            result.ErrorMessage = errorMessage;
+            var result = new Result<T>();
+            result.ErrorData = error;
             result.Failed = true;
 
             return result;

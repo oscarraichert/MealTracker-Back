@@ -15,8 +15,14 @@ namespace MealTracker.API.WebAppExtensions
 
             app.MapPost("/insert", async (IMediator mediatr, InsertMealRequest req) =>
             {
-                var response = await mediatr.Send(req);
-                return response;
+                var result = await mediatr.Send(req);
+
+                if (result.HasFailed())
+                {
+                    return Results.BadRequest(result.ErrorData);
+                }
+
+                return Results.NoContent();
             });
         }
     }

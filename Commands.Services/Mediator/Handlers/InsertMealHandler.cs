@@ -2,10 +2,11 @@
 using Commands.Infra.Entities.Result;
 using MealTracker.API.Requests;
 using MediatR;
+using Result.Entities;
 
 namespace MealTracker.API.Handlers
 {
-    public class InsertMealHandler : IRequestHandler<InsertMealRequest, Result>
+    public class InsertMealHandler : IRequestHandler<InsertMealRequest, Result<Empty>>
     {
         private DatabaseCommands databaseCommands;
 
@@ -14,16 +15,18 @@ namespace MealTracker.API.Handlers
             databaseCommands = dbCommands;
         }
 
-        public async Task<Result> Handle(InsertMealRequest request, CancellationToken cancellationToken)
+        public async Task<Result<Empty>> Handle(InsertMealRequest request, CancellationToken cancellationToken)
         {
-            var result = await databaseCommands.InsertAsync(request.Meal.ToEntity());
+            var meal = request.Meal.ToEntity();
+            var correct = meal.CorrectMacros();
 
-            if (result.HasFailed())
+            if (correct)
             {
-                throw new Exception(result.ErrorMessage);
+                await databaseCommands.InsertAsync(meal);
+                return Empty.Value;
             }
 
-            return result;
+            return Result<Empty>.Error(new ValidationError("Error validating calories to macros ratio!"));
         }
     }
 }

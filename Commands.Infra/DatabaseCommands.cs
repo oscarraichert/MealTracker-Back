@@ -2,6 +2,7 @@
 using Commands.Infra.Models;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
+using Result.Entities;
 
 namespace Commands.Infra
 {
@@ -18,18 +19,9 @@ namespace Commands.Infra
             MealCollection = database.GetCollection<Meal>(dbSettings.Value.CollectionName);
         }
 
-        public async Task<Result> InsertAsync(Meal meal)
+        public async Task InsertAsync(Meal meal)
         {
             await MealCollection.InsertOneAsync(meal);
-            var teste = true;
-
-            if (teste)
-            {
-                return Result.Success(meal);
-            }
-
-            return Result.Error("Error while inserting on database!");
-
         }
     }
 }
