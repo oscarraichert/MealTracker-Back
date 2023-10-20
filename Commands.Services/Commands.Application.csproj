@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Commands.Infra\Commands.Infra.csproj" />
+    <ProjectReference Include="..\Result.Entities\Result.Entities.csproj" />
   </ItemGroup>
 
   <ItemGroup>

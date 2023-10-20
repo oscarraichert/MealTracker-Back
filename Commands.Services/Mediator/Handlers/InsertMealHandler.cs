@@ -1,12 +1,11 @@
-﻿using Commands.API.Model;
-using Commands.Infra;
+﻿using Commands.Infra;
+using Commands.Infra.Entities.Result;
 using MealTracker.API.Requests;
 using MediatR;
-using MongoDB.Bson;
 
 namespace MealTracker.API.Handlers
 {
-    public class InsertMealHandler : IRequestHandler<InsertMealRequest, string>
+    public class InsertMealHandler : IRequestHandler<InsertMealRequest, Result>
     {
         private DatabaseCommands databaseCommands;
 
@@ -15,11 +14,16 @@ namespace MealTracker.API.Handlers
             databaseCommands = dbCommands;
         }
 
-        public async Task<string> Handle(InsertMealRequest request, CancellationToken cancellationToken)
+        public async Task<Result> Handle(InsertMealRequest request, CancellationToken cancellationToken)
         {
-            await databaseCommands.InsertAsync(request.Meal.ToEntity());
+            var result = await databaseCommands.InsertAsync(request.Meal.ToEntity());
 
-            return "Success";
+            if (result.HasFailed())
+            {
+                throw new Exception(result.ErrorMessage);
+            }
+
+            return result;
         }
     }
 }

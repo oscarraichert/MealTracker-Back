@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Commands.Application", "Com
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Commands.Infra", "Commands.Infra\Commands.Infra.csproj", "{08FC4636-C413-424F-AC2E-3A357DDBE86F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Result.Entities", "Result.Entities\Result.Entities.csproj", "{35881C19-224A-48E5-8681-0A6A3D65176D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{08FC4636-C413-424F-AC2E-3A357DDBE86F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08FC4636-C413-424F-AC2E-3A357DDBE86F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08FC4636-C413-424F-AC2E-3A357DDBE86F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35881C19-224A-48E5-8681-0A6A3D65176D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35881C19-224A-48E5-8681-0A6A3D65176D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35881C19-224A-48E5-8681-0A6A3D65176D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35881C19-224A-48E5-8681-0A6A3D65176D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -6,17 +6,17 @@ namespace Commands.API.Model
     {
         public required string Name { get; set; }
 
-        public double Quantity { get; set; }
+        public required double Quantity { get; set; }
 
-        public double Calories { get; set; }
+        public required double Calories { get; set; }
 
-        public double Proteins { get; set; }
+        public required double Proteins { get; set; }
 
-        public double Carbohydrates { get; set; }
+        public required double Carbohydrates { get; set; }
 
-        public double Fats { get; set; }
+        public required double Fats { get; set; }
 
-        public required string Notes { get; set; }
+        public string? Notes { get; set; }
 
         public Meal ToEntity()
         {
@@ -29,7 +29,7 @@ namespace Commands.API.Model
                 Carbohydrates = Carbohydrates,
                 Fats = Fats,
                 CreationDate = DateTime.Now,
-                Notes = Notes
+                Notes = Notes ?? ""
             };
         }
     }
