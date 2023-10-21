@@ -8,6 +8,5 @@ namespace Result.Entities
 {
     public abstract class Error
     {
-        public abstract string ShowErrors();
     }
 }

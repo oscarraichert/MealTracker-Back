@@ -14,10 +14,5 @@ namespace Result.Entities
         {
             Errors = errors;
         }
-
-        public override string ShowErrors()
-        {
-            return string.Join(", ", Errors);
-        }
     }
 }
