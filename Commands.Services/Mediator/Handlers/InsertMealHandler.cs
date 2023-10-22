@@ -8,11 +8,11 @@ namespace MealTracker.API.Handlers
 {
     public class InsertMealHandler : IRequestHandler<InsertMealRequest, Result<Empty>>
     {
-        private DatabaseCommands databaseCommands;
+        private DatabaseCommands DatabaseCommands;
 
         public InsertMealHandler(DatabaseCommands dbCommands)
         {
-            databaseCommands = dbCommands;
+            DatabaseCommands = dbCommands;
         }
 
         public async Task<Result<Empty>> Handle(InsertMealRequest request, CancellationToken cancellationToken)
@@ -22,7 +22,7 @@ namespace MealTracker.API.Handlers
 
             if (correct)
             {
-                await databaseCommands.InsertAsync(meal);
+                await DatabaseCommands.InsertAsync(meal);
                 return Empty.Value;
             }
 

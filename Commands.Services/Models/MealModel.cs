@@ -1,4 +1,5 @@
 ﻿using Commands.Infra.Models;
+using MongoDB.Bson;
 
 namespace Commands.API.Model
 {
@@ -22,6 +23,7 @@ namespace Commands.API.Model
         {
             return new Meal
             {
+                Id = ObjectId.GenerateNewId(),
                 Name = Name,
                 Quantity = Quantity,
                 Calories = Calories,

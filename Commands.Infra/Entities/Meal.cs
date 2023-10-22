@@ -1,9 +1,12 @@
 ﻿using Commands.Infra.Entities.Result;
+using MongoDB.Bson;
 
 namespace Commands.Infra.Models
 {
     public class Meal
     {
+        public required ObjectId Id { get; set; }
+
         public required DateTime CreationDate { get; set; }
 
         public required string Name { get; set; }

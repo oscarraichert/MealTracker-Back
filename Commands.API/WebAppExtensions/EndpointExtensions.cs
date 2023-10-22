@@ -1,4 +1,5 @@
-﻿using MealTracker.API.Requests;
+﻿using Commands.Application.Mediator.Requests;
+using MealTracker.API.Requests;
 using MediatR;
 using Microsoft.AspNetCore.Http.HttpResults;
 
@@ -13,9 +14,21 @@ namespace MealTracker.API.WebAppExtensions
                 return "funfando";
             });
 
-            app.MapPost("/insert", async (IMediator mediatr, InsertMealRequest req) =>
+            app.MapPost("/insert", async (IMediator mediator, InsertMealRequest req) =>
             {
-                var result = await mediatr.Send(req);
+                var result = await mediator.Send(req);
+
+                if (result.HasFailed())
+                {
+                    return Results.BadRequest(result.ErrorData);
+                }
+
+                return Results.NoContent();
+            });
+
+            app.MapPost("/delete", async (IMediator mediator, DeleteMealRequest req) =>
+            {
+                var result = await mediator.Send(req);
 
                 if (result.HasFailed())
                 {
