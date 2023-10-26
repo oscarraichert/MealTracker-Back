@@ -37,5 +37,19 @@ namespace Commands.Infra
                 return Result<Empty>.Error(new ValidationError("Invalid object ID!"));
             }
         }
+
+        public async Task<Result<Empty>> EditAsync(Meal meal)
+        {
+            try
+            {
+                await MealCollection.FindOneAndReplaceAsync(x => x.Id == meal.Id, meal);
+                return Empty.Value;
+
+            }
+            catch (Exception)
+            {
+                return Result<Empty>.Error(new ValidationError("Invalid object ID!"));
+            }
+        }
     }
 }

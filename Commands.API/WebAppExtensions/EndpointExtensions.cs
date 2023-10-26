@@ -9,9 +9,9 @@ namespace MealTracker.API.WebAppExtensions
     {
         public static void MapEndpoints(this WebApplication app)
         {
-            app.MapGet("/test", (HttpContext ctx) =>
+            app.MapGet("/alive", () =>
             {
-                return "funfando";
+                return "alive!";
             });
 
             app.MapPost("/insert", async (IMediator mediator, InsertMealRequest req) =>
@@ -27,6 +27,18 @@ namespace MealTracker.API.WebAppExtensions
             });
 
             app.MapPost("/delete", async (IMediator mediator, DeleteMealRequest req) =>
+            {
+                var result = await mediator.Send(req);
+
+                if (result.HasFailed())
+                {
+                    return Results.BadRequest(result.ErrorData);
+                }
+
+                return Results.NoContent();
+            });
+
+            app.MapPut("/edit", async (IMediator mediator, EditMealRequest req) =>
             {
                 var result = await mediator.Send(req);
 

@@ -1,5 +1,7 @@
-﻿using Commands.Infra.Models;
+﻿using Commands.Infra.Entities.Result;
+using Commands.Infra.Models;
 using MongoDB.Bson;
+using Result.Entities;
 
 namespace Commands.API.Model
 {
@@ -19,11 +21,30 @@ namespace Commands.API.Model
 
         public string? Notes { get; set; }
 
-        public Meal ToEntity()
+        public Result<Meal> ToEntity(string id = "")
         {
-            return new Meal
+            ObjectId mealId;
+
+            if (id.Length > 0)
             {
-                Id = ObjectId.GenerateNewId(),
+                try
+                {
+                    mealId = ObjectId.Parse(id);
+                }
+                catch (Exception)
+                {
+                    return Result<Meal>.Error(new ValidationError("Invalid ID!!"));
+                }
+            }
+
+            else
+            {
+                mealId = ObjectId.GenerateNewId();
+            }
+
+            var meal = new Meal
+            {
+                Id = mealId,
                 Name = Name,
                 Quantity = Quantity,
                 Calories = Calories,
@@ -33,6 +54,8 @@ namespace Commands.API.Model
                 CreationDate = DateTime.Now,
                 Notes = Notes ?? ""
             };
+
+            return Result<Meal>.Success(meal);
         }
     }
 }

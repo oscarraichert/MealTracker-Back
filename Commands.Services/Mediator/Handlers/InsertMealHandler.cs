@@ -17,7 +17,15 @@ namespace MealTracker.API.Handlers
 
         public async Task<Result<Empty>> Handle(InsertMealRequest request, CancellationToken cancellationToken)
         {
-            var meal = request.Meal.ToEntity();
+            var result = request.Meal.ToEntity();
+
+            if (result.HasFailed())
+            {
+                return Result<Empty>.Error(result.ErrorData!);
+            }
+
+            var meal = result.Data!;
+
             var correct = meal.CorrectMacros();
 
             if (correct)
