@@ -1,10 +1,10 @@
-﻿using Commands.API.Model;
-using Commands.Infra.Entities.Result;
-using Commands.Infra.Models;
+﻿using MealTracker.API.Model;
+using Result.Entities.Result;
+using MealTracker.Infra.Models;
 using MediatR;
 using Result.Entities;
 
-namespace Commands.Application.Mediator.Requests
+namespace MealTracker.Application.Mediator.Requests
 {
     public class EditMealRequest : IRequest<Result<Empty>>
     {

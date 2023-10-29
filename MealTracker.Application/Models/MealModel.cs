@@ -1,9 +1,9 @@
-﻿using Commands.Infra.Entities.Result;
-using Commands.Infra.Models;
+﻿using Result.Entities.Result;
+using MealTracker.Infra.Models;
 using MongoDB.Bson;
 using Result.Entities;
 
-namespace Commands.API.Model
+namespace MealTracker.API.Model
 {
     public class MealModel
     {

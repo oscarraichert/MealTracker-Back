@@ -1,4 +1,4 @@
-﻿namespace Commands.Infra
+﻿namespace MealTracker.Infra
 {
     public class DatabaseSettings
     {

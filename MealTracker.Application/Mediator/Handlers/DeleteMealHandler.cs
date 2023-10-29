@@ -1,10 +1,10 @@
-﻿using Commands.Application.Mediator.Requests;
-using Commands.Infra;
-using Commands.Infra.Entities.Result;
+﻿using Result.Entities.Result;
 using MediatR;
 using Result.Entities;
+using MealTracker.Application.Mediator.Requests;
+using MealTracker.Infra;
 
-namespace Commands.Application.Mediator.Handlers
+namespace MealTracker.Application.Mediator.Handlers
 {
     public class DeleteMealHandler : IRequestHandler<DeleteMealRequest, Result<Empty>>
     {

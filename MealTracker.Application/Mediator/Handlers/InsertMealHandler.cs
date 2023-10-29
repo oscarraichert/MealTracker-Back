@@ -1,5 +1,5 @@
-﻿using Commands.Infra;
-using Commands.Infra.Entities.Result;
+﻿using MealTracker.Infra;
+using Result.Entities.Result;
 using MealTracker.API.Requests;
 using MediatR;
 using Result.Entities;

@@ -1,4 +1,4 @@
-﻿using Commands.Application.Mediator.Requests;
+﻿using MealTracker.Application.Mediator.Requests;
 using MealTracker.API.Requests;
 using MediatR;
 using Microsoft.AspNetCore.Http.HttpResults;

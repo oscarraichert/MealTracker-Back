@@ -1,9 +1,8 @@
-﻿using Commands.Infra.Entities.Result;
+﻿using Result.Entities.Result;
 using MediatR;
-using MongoDB.Bson;
 using Result.Entities;
 
-namespace Commands.Application.Mediator.Requests
+namespace MealTracker.Application.Mediator.Requests
 {
     public class DeleteMealRequest : IRequest<Result<Empty>>
     {

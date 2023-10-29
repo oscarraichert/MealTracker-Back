@@ -1,7 +1,7 @@
-﻿using Commands.Infra.Entities.Result;
+﻿using Result.Entities.Result;
 using MongoDB.Bson;
 
-namespace Commands.Infra.Models
+namespace MealTracker.Infra.Models
 {
     public class Meal
     {

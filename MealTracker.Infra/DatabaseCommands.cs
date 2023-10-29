@@ -1,11 +1,11 @@
-﻿using Commands.Infra.Entities.Result;
-using Commands.Infra.Models;
+﻿using Result.Entities.Result;
+using MealTracker.Infra.Models;
 using Microsoft.Extensions.Options;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using Result.Entities;
 
-namespace Commands.Infra
+namespace MealTracker.Infra
 {
     public class DatabaseCommands
     {

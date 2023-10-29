@@ -1,7 +1,7 @@
 ﻿using Result.Entities;
 using System.Runtime.InteropServices;
 
-namespace Commands.Infra.Entities.Result
+namespace Result.Entities.Result
 {
     public class Result<T>
     {

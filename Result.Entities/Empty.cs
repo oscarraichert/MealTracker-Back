@@ -1,4 +1,4 @@
-﻿using Commands.Infra.Entities.Result;
+﻿using Result.Entities.Result;
 
 namespace Result.Entities
 {

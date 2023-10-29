@@ -1,15 +1,10 @@
-﻿using Commands.Application.Mediator.Requests;
-using Commands.Infra;
-using Commands.Infra.Entities.Result;
+﻿using MealTracker.Application.Mediator.Requests;
+using MealTracker.Infra;
+using Result.Entities.Result;
 using MediatR;
 using Result.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Commands.Application.Mediator.Handlers
+namespace MealTracker.Application.Mediator.Handlers
 {
     public class EditMealHandler : IRequestHandler<EditMealRequest, Result<Empty>>
     {

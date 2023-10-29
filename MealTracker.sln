@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Commands.API", "Commands.API\Commands.API.csproj", "{17CBBFA9-989F-46C9-9FFB-941C6DEAEAA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MealTracker.API", "MealTracker.API\MealTracker.API.csproj", "{17CBBFA9-989F-46C9-9FFB-941C6DEAEAA7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Commands.Application", "Commands.Services\Commands.Application.csproj", "{D1BA44E0-4695-48C3-B4BB-2FF0367B0388}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MealTracker.Application", "MealTracker.Application\MealTracker.Application.csproj", "{D1BA44E0-4695-48C3-B4BB-2FF0367B0388}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Commands.Infra", "Commands.Infra\Commands.Infra.csproj", "{08FC4636-C413-424F-AC2E-3A357DDBE86F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MealTracker.Infra", "MealTracker.Infra\MealTracker.Infra.csproj", "{08FC4636-C413-424F-AC2E-3A357DDBE86F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Result.Entities", "Result.Entities\Result.Entities.csproj", "{35881C19-224A-48E5-8681-0A6A3D65176D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Result.Entities", "Result.Entities\Result.Entities.csproj", "{35881C19-224A-48E5-8681-0A6A3D65176D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

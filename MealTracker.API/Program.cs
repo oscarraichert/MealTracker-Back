@@ -1,6 +1,5 @@
-using Commands.Application;
-using Commands.Infra;
-using MealTracker.API.Handlers;
+using MealTracker.Application;
+using MealTracker.Infra;
 using MealTracker.API.WebAppExtensions;
 using Microsoft.AspNetCore.Mvc;
 using System.Reflection;

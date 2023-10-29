@@ -1,4 +1,4 @@
-﻿using Commands.Infra;
+﻿using MealTracker.Infra;
 using System.Runtime.CompilerServices;
 
 namespace MealTracker.API.WebAppExtensions

@@ -1,5 +1,5 @@
-﻿using Commands.API.Model;
-using Commands.Infra.Entities.Result;
+﻿using MealTracker.API.Model;
+using Result.Entities.Result;
 using MediatR;
 using Result.Entities;
 
