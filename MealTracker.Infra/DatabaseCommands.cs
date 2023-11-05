@@ -13,7 +13,7 @@ namespace MealTracker.Infra
 
         public DatabaseCommands(IOptions<DatabaseSettings> dbSettings)
         {
-            var mongoClient = new MongoClient(dbSettings.Value.ConnectionString);
+            var mongoClient = new MongoClient(Environment.GetEnvironmentVariable("connectionString"));
 
             var database = mongoClient.GetDatabase(dbSettings.Value.DatabaseName);
 

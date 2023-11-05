@@ -3,6 +3,8 @@ using MealTracker.Infra;
 using MealTracker.API.WebAppExtensions;
 using Microsoft.AspNetCore.Mvc;
 using System.Reflection;
+using System.Net;
+using dotenv.net;
 
 namespace MealTracker.API
 {
@@ -20,6 +22,8 @@ namespace MealTracker.API
             builder.Services.AddSwaggerGen();
 
             builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection("DatabaseSettings"));
+
+            DotEnv.Load();
 
             var app = builder.Build();
 
